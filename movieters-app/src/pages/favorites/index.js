@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './favorites.css';
+import { toast } from 'react-toastify';
 
 function Favorites() {
 
@@ -17,7 +18,8 @@ function Favorites() {
             return (i.id !== id)
         });
         setMovies(filterMovies);
-        localStorage.setItem('@movieters', JSON.stringify(filterMovies))
+        localStorage.setItem('@movieters', JSON.stringify(filterMovies));
+        toast.success('Movie deleted successfully!')
     }
 
 

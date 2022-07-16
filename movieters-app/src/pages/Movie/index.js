@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import './movie-detail.css'
 
 import api from '../../services/api';
+import { toast } from 'react-toastify';
 
 function Movie() {
 
@@ -43,11 +44,11 @@ function Movie() {
         const hasMovie = savedMovies.some((saved) => saved.id === movie.id);
 
         if (hasMovie) {
-            alert('this movie is already on the list')
+            toast.warn('This movie is already on the list')
         } else {
             savedMovies.push(movie);
             localStorage.setItem('@movieters', JSON.stringify(savedMovies))
-            alert('Saved successfully')
+            toast.success('Saved successfully')
         }
 
     }
