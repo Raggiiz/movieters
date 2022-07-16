@@ -1,0 +1,17 @@
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.error h3 {
+    color: #e43854;
+    margin-bottom: 10px;
+}
+
+.error a {
+    font-size: 20px;
+    text-decoration: underline;
+}
